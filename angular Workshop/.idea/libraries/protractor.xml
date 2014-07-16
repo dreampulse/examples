@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="protractor" type="javaScript">
+    <properties>
+      <option name="frameworkName" value="node_modules" />
+      <sourceFilesUrls>
+        <item url="file:///usr/local/lib/node_modules/protractor/lib/protractor.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file:///usr/local/lib/node_modules/protractor/lib/protractor.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

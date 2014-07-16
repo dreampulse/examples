@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/my.css">
+
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.1/angular.js"></script>
+
+        <script type="application/javascript">
+            function Ctrl($scope) {
+                $scope.state = {};
+                $scope.state.open = false;
+
+
+                $scope.click = function() {
+                    if ($scope.state.open) {
+                        $(".mybox2").removeClass('removebox');
+                //        $('.subbox').removeClass("subbox_enabled");
+                        $scope.state.open = false;
+                    } else {
+                        $scope.state.open = true;
+                        $(".mybox2:not(#project2)").addClass('removebox');
+                    //    $('.subbox').addClass("subbox_enabled");
+                    }
+
+                }
+            }
+        </script>
+    </head>
+    <body ng-app ng-controller="Ctrl">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="main">
+            <h1>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</h1>
+
+            <div>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            </div>
+
+        </div>
+
+        <div class="mybox">
+            <h2>Projekte</h2>
+        </div>
+
+
+        <div class="mybox2">
+            Projekt1
+        </div>
+        <div class="mybox2" ng-click="click()" id="project2">
+            Projekt2
+        </div>
+
+        <div class="subbox" ng-show='state.open'>
+         foo
+        </div>
+
+        <div class="mybox2">
+            Projekt3
+        </div>
+
+        <div class="mybox2">
+            Projekt4
+        </div>
+
+        <div class="mybox2">
+            Projekt5
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.js"><\/script>')</script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>

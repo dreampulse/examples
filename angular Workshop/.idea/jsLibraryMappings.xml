@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$/05/app/app.js" libraries="{angular}" />
+    <file url="file://$PROJECT_DIR$/08/test.js" libraries="{protractor}" />
+    <file url="PROJECT" libraries="{angular, karma-jasmin, protractor}" />
+  </component>
+</project>
+

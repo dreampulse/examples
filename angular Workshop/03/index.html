@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- AngularJS Zeugs -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-route.min.js"></script>
+
+  <!-- CSS Zeugs -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+
+  <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+  <title>Simple example</title>
+
+  <script language="JavaScript">
+    'use strict';
+
+    // hier wird gesagt: wenn URL x geöffnet wird, dann view anzeigen
+    angular.module('App', ['ngRoute'])
+      .config(function ($routeProvider) {
+        $routeProvider
+          .when('/', {
+            templateUrl: 'views/main.html',
+            controller: 'MainCtrl'
+          })
+          .when('/inhalt1', {
+            templateUrl: 'views/inhalt1.html',
+            controller: 'Ctrl2'
+          })
+          .otherwise({
+            redirectTo: '/'
+          });
+      })
+      .run(function($rootScope){
+        console.log("run called!");
+
+          $rootScope.model = {};
+      });
+
+    angular.module('App').controller('MainCtrl', function($scope) {
+      $scope.viewModel.name = "Jonathan";
+    });
+
+    angular.module('App').controller('Ctrl2', function($scope) {
+      $scope.viewModel.name = "Max";
+    });
+
+    // get root scope in debugger:
+    // var $scope = angular.element(document.querySelector('body')).scope();
+
+
+  </script>
+
+</head>
+<body ng-app="App">
+
+  <!-- das hier ist ein Beispiel für ein Header -->
+  <div class="container">
+    <div class="header">
+      <ul class="nav nav-pills pull-right">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a ng-href="#/inhalt1">Inhalt1</a></li>
+        <li><a ng-href="#">Bla</a></li>
+      </ul>
+      <h3 class="text-muted"><input ng-model="viewModel.name"></h3>
+    </div>
+
+
+    <!-- Das hier wird mit den Templates ersetzt  -->
+    <div ng-view></div>
+
+
+    <div class="footer">
+      <p>von Jonathan ☺</p>
+    </div>
+  </div>
+</body>
+</html>

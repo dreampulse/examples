@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+
+  <script src="components/angular/angular.js"></script>
+
+  <script language="JavaScript" src="app.js"></script>
+
+</head>
+
+<body ng-app="app">
+
+
+  <div ng-controller="MainCtrl">
+    <input type="text" ng-model="vm.filter">
+
+    <h1>list:</h1>
+
+    <ul ng-repeat="item in vm.list | filter: vm.filter">
+      <li>{{item}}</li>
+    </ul>
+
+    <!--<div data-my-view2 stuff="vm.filter"></div>-->
+
+  </div>
+
+  <!--<my-directive></my-directive>-->
+
+  <!--<my-view1></my-view1>-->
+
+  <my-view3></my-view3>
+
+</body>
+</html>

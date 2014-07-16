@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+
+  <script src="components/angular/angular.js"></script>
+
+  <script language="JavaScript">
+    'use strict';
+
+    var app = angular.module('app', [])
+
+    app.controller('MainCtrl', function($scope) {
+      $scope.vm = {};
+      $scope.vm.list = [{
+        job : "admin",
+        name : "max"
+      }, {
+        job : "consultant",
+        name : "steve"
+      }, {
+        job : "developer",
+        name : "caroline"
+      }]
+
+      $scope.myModel = new myModel();
+    });
+  </script>
+
+    </head>
+<body ng-app="app">
+
+
+  <div ng-controller="MainCtrl">
+    <input type="text" ng-model="vm.filter">
+
+    <h1>list:</h1>
+
+    <ul>
+    <li ng-repeat="item in vm.list | filter: vm.filter">
+      {{item}}
+    </li>
+
+    </ul>
+  </div>
+
+</body>
+</html>
